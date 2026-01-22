@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<body style="font-family: Arial; text-align: center; margin-top: 50px;">
+
+<h1 id="res">000</h1>
+<button onclick="copy()">Copier</button>
+
+<script>
+function gen() {
+  let n = Math.floor(Math.random() * 1000);
+  document.getElementById("res").innerText =
+    n.toString().padStart(3, "0");
+}
+
+setInterval(gen, 200); // 200 ms = très rapide
+
+function copy() {
+  navigator.clipboard.writeText(
+    document.getElementById("res").innerText
+  );
+}
+</script>
+
+</body>
+</html>
